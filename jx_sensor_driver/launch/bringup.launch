@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="port_1" default="/dev/485_bus_1"/>
+  <arg name="port_2" default="/dev/485_bus_2"/>
+  <arg name="baudrate" default="9600"/>
+
+  <!-- jx sensor driver -->
+  <node pkg="jx_sensor_driver" type="jx_sensor_driver" name="jx_sensor_driver" output="screen">
+    <param name="sensor1_com"   type="string"   value="$(arg port_1)"/>
+    <param name="sensor2_com"   type="string"   value="$(arg port_2)"/>
+    <param name="baudrate"      type="int"      value="$(arg baudrate)"/>
+  </node>
+  
+</launch>
